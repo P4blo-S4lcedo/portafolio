@@ -6,11 +6,12 @@ body {
     padding: 0;
     background-color: rgba(0, 0, 0, 0.942);
     color: white;
+    overflow-x: hidden;
 }
 
 .about-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center; /* Para que estén a la misma altura */
     gap: 3rem; /* Espacio entre texto e imagen */
     flex-wrap: wrap; /* Para que se acomoden bien en pantallas pequeñas */
@@ -337,11 +338,71 @@ a {
 }
 
 
-/* Responsividad */
+/* En pantallas pequeñas, apilar verticalmente */
 @media (max-width: 768px) {
-    section {
-        padding: 1.5rem;
-        margin: 0.625rem;
-    }
-  
+  .about-container {
+    flex-direction: column;
+    align-items: flex-start; /* para que el texto quede alineado a la izquierda */
+  }
+
+  /* Quitar márgenes que empujan el contenido */
+  .about-container .text,
+  .about-container .profile-image {
+    margin-left: 0;
+    width: 100%; /* que ocupen todo el ancho */
+  }
+
+  /* Si quieres centrar la imagen */
+  .about-container .profile-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Ajusta el tamaño de la imagen en móvil */
+  .about-container .profile-image img {
+    max-width: 80%; /* o el tamaño que prefieras */
+    height: auto;
+  }
 }
+
+@media (max-width: 768px) {
+    .about-container .text,
+    .about-container .profile-image {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .about-container {
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image .img-box {
+        width: 10rem;
+        height: 10rem;
+    }
+    .profile-image .img-box .img-item img {
+        width: 11rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
