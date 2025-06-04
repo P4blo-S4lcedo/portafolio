@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+body {
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.942);
+    color: white;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Para que estén a la misma altura */
+    gap: 3rem; /* Espacio entre texto e imagen */
+    flex-wrap: wrap; /* Para que se acomoden bien en pantallas pequeñas */
+    margin-top: 5rem;
+}
+
+.about-container .text,
+.about-container .profile-image {
+    flex: 1; /* Que ambos ocupen el mismo ancho (ajustable) */
+    margin-left: 10rem;
+}
+  
+.profile-image .img-box{
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    padding: 0.213rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-image .img-box::before,
+.profile-image .img-box::after {
+    content: '';
+    position: absolute;
+    width: 31.25rem;
+    height: 35.25rem;
+    background: conic-gradient(transparent, transparent,
+    transparent, #7cf03d);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+.profile-image .img-box:after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-image .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #101010;
+    border-radius: 50%;
+    border: .1px solid #101010;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.profile-image .img-box .img-item img {
+    position: absolute;
+    display: block;
+    width: 17.5rem;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+section {
+    margin-bottom: 8rem; /* Espacio entre componentes */
+  }
+
+
+h2 {
+    text-align: center;
+    font-size: 1.875rem; 
+}
+
+h3 {
+    text-align: left;
+    font-size: 1.625rem; 
+}
+
+h4 {
+    text-align: left;
+    font-size: 1.563rem;
+}
+
+h1 {
+    font-size: 5.625rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.prin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#txtAnimated {    
+    font-size: 1.5rem;
+    font-family: monospace;
+    border-right: 2px solid white; /* Simula el cursor */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; /* Evita desplazamientos indeseados */
+    max-width: 0; 
+    animation: typing 6s steps(40, end) alternate infinite, blinkCursor 1.2s infinite;
+}
+
+/* Animación de escritura y borrado */
+@keyframes typing {
+    0% { max-width: 0; } /* Comienza vacío */
+    50% { max-width: 100%; } /* Escribe todo */
+    100% { max-width: 0; } /* Borra todo */
+}
+
+/* Parpadeo del cursor */
+@keyframes blinkCursor {
+    50% { border-color: transparent; }
+}
+
+section {
+    padding: 0px;
+}
+
+.text, .text2, .proyecto, .experience, .studyes, .contact {
+    max-width: 800px;
+    margin: auto;    
+}
+
+.proyecto{
+    margin-top: 8rem;    
+}
+
+.text{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    text-align: center;
+}
+
+.card-list li {
+    padding: 1rem 1.2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.39);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2d86cf;
+}
+
+.card-list li::before {
+    content: "</";
+    color: #808080;
+    margin-right: 4px;
+}
+
+.card-list li::after {
+    content: ">";
+    color: #808080;
+    margin-left: 4px;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 1.25rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Sección principal */
+#principal {
+    text-align: center;
+    padding: 11.875rem 1.25rem;
+    background-image: url('img/fondoo.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+}
+
+#principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.); /* Ajusta la opacidad aquí */
+    z-index: -1;
+    /* Aplica la máscara */
+    -webkit-mask-image: linear-gradient(black 80%, transparent);
+    mask-image: linear-gradient(black 80%, transparent);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* From Uiverse.io by aguerquin */ 
+.button-icon {
+  margin-top: 2.5rem;
+  display: flex;
+  border: 3px #fff solid;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.icon {
+  background-color: #fff;
+  padding: 10px 10px 5px 10px;
+}
+
+.icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.cube {
+  transition: all 0.4s;
+  transform-style: preserve-3d;
+  width: 200px;
+  height: 20px;
+}
+
+.button-icon:hover {
+  border-color: #ffff;
+}
+
+.button-icon:hover .cube {
+  transform: rotateX(90deg);
+}
+
+.side {
+  position: absolute;
+  height: 47px;
+  width: 200px;
+  display: flex;
+  font-size: 0.8em;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.top {
+  background: #101010;
+  color: #fff;
+  transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+}
+
+.front {
+  background: #222229;
+  color: #fff;
+  transform: translate3d(0, 0, 1em);
+}
+
+
+.studyes{
+    align-items: center;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    background: #ff6900;
+    min-height: 6.25rem;
+    padding: 1.25rem 3.125rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    section {
+        padding: 1.5rem;
+        margin: 0.625rem;
+    }
+  
+}
