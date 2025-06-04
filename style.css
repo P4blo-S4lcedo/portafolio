@@ -350,6 +350,7 @@ a {
   .about-container .profile-image {
     margin-left: 0;
     width: 100%; /* que ocupen todo el ancho */
+    margin-left: 2rem;
   }
 
   /* Si quieres centrar la imagen */
