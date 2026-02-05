@@ -18,67 +18,6 @@ body {
     margin-top: 5rem;
 }
 
-.about-container .text,
-.about-container .profile-image {
-    flex: 1; /* Que ambos ocupen el mismo ancho (ajustable) */
-    margin-left: 10rem;
-}
-  
-.profile-image .img-box{
-    position: relative;
-    width: 16rem;
-    height: 16rem;
-    border-radius: 50%;
-    padding: 0.213rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.profile-image .img-box::before,
-.profile-image .img-box::after {
-    content: '';
-    position: absolute;
-    width: 31.25rem;
-    height: 35.25rem;
-    background: conic-gradient(transparent, transparent,
-    transparent, #7cf03d);
-    transform: rotate(0deg);
-    animation: rotate-border 10s linear infinite;
-}
-
-.profile-image .img-box:after {
-    animation-delay: -5s;
-}
-
-@keyframes rotate-border {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.profile-image .img-box .img-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #101010;
-    border-radius: 50%;
-    border: .1px solid #101010;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.profile-image .img-box .img-item img {
-    position: absolute;
-    display: block;
-    width: 17.5rem;
-    object-fit: cover;
-    mix-blend-mode: lighten;
-}
-
 section {
     margin-bottom: 8rem; /* Espacio entre componentes */
   }
